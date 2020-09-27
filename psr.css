@@ -47,15 +47,16 @@ a {
     grid-template-columns: repeat(3, 1fr);
     grid-template-areas: 
     '. MainLogo .'
-    'Search';
+    '. Search .';
 }
 
 .main-logo {
     grid-area: MainLogo;
-    width: 300px;
+    width: 400px;
     justify-self: center;
     align-self: end;
     cursor: pointer;
+    margin: 15px;
 }
 
 .search-bar {
@@ -63,31 +64,45 @@ a {
     justify-self: center;
     align-self: center;
     width: 500px;
-    height: 16px;
+    height: 30px;
     display: flex;
+    justify-content: center;
     border-radius: 25px;
-    border: 2px solid black;
+    border: 2px solid rgba(34, 34, 34, 0.2);
 }
 
 .search-bar:hover {
     box-shadow: 0 1px 6px rgba(32, 33, 36, 0.28);
 }
 
-.search input {
+.search-bar input {
     margin: 2px;
     width: 450px;
     border: none;
 }
 
+.search-bar input:focus {
+    outline: none;
+}
+
 .mag-glass {
-    width: 10px;
-    height: 10px;
+    width: 20px;
+    height: 20px;
     justify-self: center;
     align-self: center;
 }
 
 footer {
     display: grid;
+    grid-template-columns: repeat(2, 100px) 1fr repeat(3, 70px);
+    grid-template-areas: ' RandomLink . . . . .';
+    position: absolute;
+    bottom: 0;
+    padding: 8px;
+    width: 100%;
+    opacity: 0.6;
+    background-color: rgba(242, 242, 242,0.9);
+    border-top: 1px solid rgba(160, 87, 87, 0.5);
 }
 
 footer a:hover {
@@ -95,6 +110,7 @@ footer a:hover {
 }
 
 .random-link {
+    grid-area: RandomLink;
     justify-self: start;
     align-self: center;
 }
